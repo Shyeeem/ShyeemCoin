@@ -1,5 +1,6 @@
+import com.google.gson.GsonBuilder;
 import java.util.ArrayList;
-import com.Google.gson.GsonBuilder;
+
 
 public class ShyeemChain {
 
@@ -12,7 +13,8 @@ public class ShyeemChain {
         blockchain.add(new Block("I am the third block!", blockchain.get(blockchain.size()-1).hash));
         blockchain.add(new Block("I am the fourth block!", blockchain.get(blockchain.size()-1).hash));
 
-        String blockchainJson = new GsonBuilder()
+        String blockchainJson = new GsonBuilder().setPrettyPrinting().create().toJson(blockchain);
+        System.out.println(blockchainJson);
 
     }
 }
