@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class ShyeemChain {
 
-    public static int difficulty = 5;
+    public static int difficulty = 0;
 
     public static Boolean isChainValid(){
         Block currentBlock;
@@ -36,15 +36,15 @@ public class ShyeemChain {
         blockchain.get(0).mineBlock(difficulty);
 
         blockchain.add(new Block("I am the second block!", blockchain.get(blockchain.size()-1).hash));
-        System.out.println("Trying to Mine block 1... ");
+        System.out.println("Trying to Mine block 2... ");
         blockchain.get(0).mineBlock(difficulty);
 
         blockchain.add(new Block("I am the third block!", blockchain.get(blockchain.size()-1).hash));
-        System.out.println("Trying to Mine block 1... ");
+        System.out.println("Trying to Mine block 3... ");
         blockchain.get(0).mineBlock(difficulty);
 
         blockchain.add(new Block("I am the fourth block!", blockchain.get(blockchain.size()-1).hash));
-        System.out.println("Trying to Mine block 1... ");
+        System.out.println("Trying to Mine block 4... ");
         blockchain.get(0).mineBlock(difficulty);
 
         String blockchainJson = new GsonBuilder().setPrettyPrinting().create().toJson(blockchain);
